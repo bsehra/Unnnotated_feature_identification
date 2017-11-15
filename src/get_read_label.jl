@@ -14,7 +14,9 @@ boundaries or other genomic phenomena.=#
 using BioAlignments
 using BGZFStreams
 using GenomicFeatures
-using get_annotated_features: get_anno_feature_trees
+
+include("./get_annotated_features.jl")
+using get_annotated_features
 #using ResumableFunctions - incorporate to use python/C# style macros
 
 
@@ -177,6 +179,8 @@ end
 #bamarray = [inbam1, inbam2, inbam3]
 #for bamf in bamarray:
 
+
+#This is memory efficient but slow!
 reader = open(BAM.Reader, inbam, index=inbamindex)
 #=Take in mapped reads from a bam file and write out select information to file; adding cigar_rle tuple=#
 #open(labelfile, "a") do lf #or append mode???
