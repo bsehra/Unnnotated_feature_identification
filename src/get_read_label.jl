@@ -180,7 +180,7 @@ end
 #for bamf in bamarray:
 
 
-#This is memory efficient but slow!
+#This is memory efficient but slow! Increase number of threads
 reader = open(BAM.Reader, inbam, index=inbamindex)
 #=Take in mapped reads from a bam file and write out select information to file; adding cigar_rle tuple=#
 #open(labelfile, "a") do lf #or append mode???
